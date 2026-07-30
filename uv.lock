@@ -1,0 +1,31 @@
+version = 1
+revision = 3
+requires-python = ">=3.14"
+
+[manifest]
+members = [
+    "at-splink-ersl-two",
+    "commons",
+    "organization",
+    "person",
+]
+
+[[package]]
+name = "at-splink-ersl-two"
+version = "0.1.0"
+source = { editable = "." }
+
+[[package]]
+name = "commons"
+version = "0.1.0"
+source = { editable = "packages/commons" }
+
+[[package]]
+name = "organization"
+version = "0.1.0"
+source = { editable = "packages/organization" }
+
+[[package]]
+name = "person"
+version = "0.1.0"
+source = { editable = "packages/person" }
