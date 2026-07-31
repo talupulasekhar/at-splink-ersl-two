@@ -26,3 +26,7 @@ members = [
     "packages/person",
     "packages/organization",
 ]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
