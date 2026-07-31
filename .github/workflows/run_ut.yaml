@@ -3,24 +3,29 @@ name: Python Unit Tests
 # Trigger this workflow only on pull request events targeted at specific branches
 on:
   pull_request:
-    branches: [ main, master, develop ]
+    branches:
+      - main
+      - master
 
 jobs:
   test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        # Test across multiple Python versions
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
     steps:
-      # Step 1: Download the repository code onto the runner runner
-      - name: Check out repository code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Install the specified Python version
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
           # Automatically use the version matrix and enable caching
-          python-version: 3.1.4
+          python-version: ${{ matrix.python-version }}
           enable-cache: true
 
       - name: Install Dependencies
