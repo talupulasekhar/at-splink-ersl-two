@@ -1,6 +1,7 @@
 import unittest
 # Import the functions you want to test
-from commons.utils import add, divide
+#from commons.utils import add, divide
+from  packages.commons.src.commons.utils import add, divide
 
 
 class TestUtils(unittest.TestCase):
