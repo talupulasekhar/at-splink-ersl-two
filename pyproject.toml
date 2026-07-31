@@ -34,5 +34,12 @@ members = [
 # pythonpath = ["."]
 
 
-[tool.pytest.ini_options]
-addopts = ["--import-mode=importlib"]
+# [tool.pytest.ini_options]
+# addopts = ["--import-mode=importlib"]
+
+pythonpath = ["."]
+addopts = [
+    "--import-mode=importlib"
+]
+
+
