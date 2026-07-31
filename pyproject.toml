@@ -38,7 +38,7 @@ members = [
 # addopts = ["--import-mode=importlib"]
 
 [tool.pytest.ini_options]
-pythonpath = ["./packages"]
+pythonpath = ["."]
 addopts = [
     "--import-mode=importlib"
 ]
