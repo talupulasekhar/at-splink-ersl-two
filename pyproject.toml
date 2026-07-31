@@ -36,5 +36,5 @@ members = [
 
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = ["./packages"]
 
