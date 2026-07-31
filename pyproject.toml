@@ -11,6 +11,10 @@ dependencies = []
 
 [project.scripts]
 at-splink-ersl-two = "at_splink_ersl_two:main"
+#prn = "at_splink_ersl_two.packages.person.src.person.pone:main"
+
+
+
 
 [build-system]
 requires = ["uv_build>=0.12.0,<0.13.0"]

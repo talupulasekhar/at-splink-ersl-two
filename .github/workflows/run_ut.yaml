@@ -1,0 +1,32 @@
+name: Python Unit Tests
+
+# Trigger this workflow only on pull request events targeted at specific branches
+on:
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Download the repository code onto the runner runner
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Install the specified Python version
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          # Automatically use the version matrix and enable caching
+          python-version: 3.1.4
+          enable-cache: true
+
+      - name: Install Dependencies
+        # Synchronizes environment with your uv.lock file
+        run: uv sync --frozen --all-extras --dev
+
+      - name: Run Tests
+        # Executes pytest inside the isolated uv environment
+        run: uv run pytest
