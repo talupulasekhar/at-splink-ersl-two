@@ -34,5 +34,5 @@ jobs:
 
       - name: Run Tests
         # Executes pytest inside the isolated uv environment
-        run: uv run pytest packages/commons/test
+        run: uv run pytest packages/commons/tests
 
